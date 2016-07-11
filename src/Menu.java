@@ -8,10 +8,11 @@ import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 
 /**
- * Das Hautpmenü von der ganzen Scheiße
+ * The main menu of the application
  * @author Yoseppe
  *
  */
+@SuppressWarnings("serial")
 public class Menu extends JFrame implements ActionListener {
 
 	// Buttons will be used in the constructor
@@ -40,7 +41,7 @@ public class Menu extends JFrame implements ActionListener {
 		searchRecipe.setBackground(Color.WHITE);
 		searchRecipe.setContentAreaFilled(false);
 		searchRecipe.setOpaque(true);
-		searchRecipe.setBorder(new LineBorder(Color.blue));
+		searchRecipe.setBorder(new LineBorder(Color.BLUE));
 		add(searchRecipe);
 
 		// Press this button to see which recipe we recommend today
@@ -51,7 +52,7 @@ public class Menu extends JFrame implements ActionListener {
 		dailyRecipe.setBackground(Color.WHITE);
 		dailyRecipe.setContentAreaFilled(false);
 		dailyRecipe.setOpaque(true);
-		dailyRecipe.setBorder(new LineBorder(Color.green));
+		dailyRecipe.setBorder(new LineBorder(Color.GREEN));
 		add(dailyRecipe);
 
 		// Press this button to see which recipes you marked as your favorites
@@ -62,7 +63,7 @@ public class Menu extends JFrame implements ActionListener {
 		favourites.setBackground(Color.WHITE);
 		favourites.setContentAreaFilled(false);
 		favourites.setOpaque(true);
-		favourites.setBorder(new LineBorder(Color.green));
+		favourites.setBorder(new LineBorder(Color.GREEN));
 		add(favourites);
 
 		// Press this button to see the five recipes u used
@@ -73,7 +74,7 @@ public class Menu extends JFrame implements ActionListener {
 		usedRecipes.setBackground(Color.WHITE);
 		usedRecipes.setContentAreaFilled(false);
 		usedRecipes.setOpaque(true);
-		usedRecipes.setBorder(new LineBorder(Color.green));
+		usedRecipes.setBorder(new LineBorder(Color.GREEN));
 		add(usedRecipes);
 
 		// Press this button to add a new recipe to the database
@@ -84,10 +85,10 @@ public class Menu extends JFrame implements ActionListener {
 		addOwnRecipe.setBackground(Color.WHITE);
 		addOwnRecipe.setContentAreaFilled(false);
 		addOwnRecipe.setOpaque(true);
-		addOwnRecipe.setBorder(new LineBorder(Color.green));
+		addOwnRecipe.setBorder(new LineBorder(Color.GREEN));
 		add(addOwnRecipe);
 
-		// Press this button to close this app
+		// Press this button to close this application
 		// not implemented
 		exit = new JButton("Exit :-(");
 		exit.setBounds(60, 440, 280, 40);
@@ -104,14 +105,14 @@ public class Menu extends JFrame implements ActionListener {
 
 		// change looks of the buttons
 		Color backgroundColor = Color.GREEN;
-		Color foregroundColor = Color.white;
+		Color foregroundColor = Color.WHITE;
 		// exit and search recipe have different colors
 		if (e.getSource() == exit) {
 			backgroundColor = Color.RED;
 		} else if (e.getSource() == searchRecipe) {
 			backgroundColor = Color.BLUE;
 		} else if (e.getSource() != searchRecipe && e.getSource() != exit) {
-			foregroundColor = Color.black;
+			foregroundColor = Color.BLACK;
 		}
 		// all Buttons except exit and searchRecipe become green, and every
 		// button loses its text
