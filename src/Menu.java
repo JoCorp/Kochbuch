@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,15 +11,18 @@ import javax.swing.border.LineBorder;
 
 /**
  * The main menu of the application
+ * 
  * @author Yoseppe
  *
  */
+
 @SuppressWarnings("serial")
 public class Menu extends JFrame implements ActionListener {
 
 	// Buttons will be used in the constructor
 	private JButton searchRecipe, dailyRecipe, favourites, usedRecipes, addOwnRecipe, exit;
 	private Exit s;
+
 	public static void main(String[] args) {
 		// Main Menu created here
 		Menu mainMenu = new Menu("Main menu");
@@ -25,6 +30,8 @@ public class Menu extends JFrame implements ActionListener {
 		mainMenu.setSize(400, 560);
 		mainMenu.setLayout(null);
 		mainMenu.setVisible(true);
+		mainMenu.setResizable(false);
+		mainMenu.setLocationRelativeTo(null);
 	}
 
 	public Menu(String title) {
@@ -89,7 +96,7 @@ public class Menu extends JFrame implements ActionListener {
 		add(addOwnRecipe);
 
 		// Press this button to close this application
-		// not implemented
+		// implemented
 		exit = new JButton("Exit :-(");
 		exit.setBounds(60, 440, 280, 40);
 		exit.addActionListener(this);
@@ -124,11 +131,55 @@ public class Menu extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == exit) {
-			//Check if you really want to exit
+			// Check if you really want to exit
 			s = new Exit();
-			s.exit();
-	}
+			s.addWindowListener(new WindowListener() {
+				
+				@Override
+				public void windowOpened(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void windowIconified(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void windowDeiconified(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void windowDeactivated(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void windowClosing(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void windowClosed(WindowEvent e) {
+					button.setBackground(Color.WHITE);
+					button.setForeground(Color.BLACK);
+					getContentPane().repaint();
+				}
+				
+				@Override
+				public void windowActivated(WindowEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			
+		}
+
 	}
 }
-
-
