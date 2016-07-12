@@ -17,7 +17,7 @@ public class Menu extends JFrame implements ActionListener {
 
 	// Buttons will be used in the constructor
 	private JButton searchRecipe, dailyRecipe, favourites, usedRecipes, addOwnRecipe, exit;
-
+	private Exit s;
 	public static void main(String[] args) {
 		// Main Menu created here
 		Menu mainMenu = new Menu("Main menu");
@@ -124,17 +124,11 @@ public class Menu extends JFrame implements ActionListener {
 		}
 
 		if (e.getSource() == exit) {
-			// without timer System.exit(0) would be called instantly and Color
-			// and text would not change
-			Timer t = new Timer(1000, new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					System.exit(0);
-				}
-			});
-			t.setRepeats(false);
-			t.start();
-		}
+			//Check if you really want to exit
+			s = new Exit();
+			s.exit();
 	}
-
+	}
 }
+
+
