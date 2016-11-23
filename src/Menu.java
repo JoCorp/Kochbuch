@@ -6,7 +6,6 @@ import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 
 /**
@@ -18,6 +17,8 @@ import javax.swing.border.LineBorder;
 
 @SuppressWarnings("serial")
 public class Menu extends JFrame implements ActionListener {
+	
+	
 
 	// Buttons will be used in the constructor
 	private JButton searchRecipe, dailyRecipe, favourites, usedRecipes, addOwnRecipe, exit;
@@ -136,50 +137,26 @@ public class Menu extends JFrame implements ActionListener {
 			s.addWindowListener(new WindowListener() {
 				
 				@Override
-				public void windowOpened(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void windowIconified(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void windowDeiconified(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void windowDeactivated(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void windowClosing(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void windowClosed(WindowEvent e) {
+				public void windowClosed(WindowEvent e){
+					//Sets the original Colors of the Exit-Button
 					button.setBackground(Color.WHITE);
 					button.setForeground(Color.BLACK);
 					getContentPane().repaint();
 				}
 				
-				@Override
-				public void windowActivated(WindowEvent e) {
-					// TODO Auto-generated method stub
-					
-				}
+				//TODO Auto implemented Methods
+				@Override public void windowActivated(WindowEvent arg0){}
+				@Override public void windowClosing(WindowEvent e){}
+				@Override public void windowDeactivated(WindowEvent e){}
+				@Override public void windowDeiconified(WindowEvent e){}
+				@Override public void windowIconified(WindowEvent e){}
+				@Override public void windowOpened(WindowEvent e){} 
+						
 			});
 			
-		}
+		
 
+		}
 	}
 }
+
